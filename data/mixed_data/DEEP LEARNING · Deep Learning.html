@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+      <meta charset="UTF-8">
+        <title>
+          
+            DEEP LEARNING &middot; Deep Learning
+          
+        </title>
+
+      <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+      <!--<meta name="description" content="NYU Deep Learning Spring 2021">-->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="theme-color" content="#ffffff" />
+
+      <link rel="shortcut icon" href="/NYU-DLSP21/static/favicon.ico">
+      <link rel="stylesheet" href="/NYU-DLSP21/static/css/variables.css">
+      <link rel="stylesheet" href="/NYU-DLSP21/static/css/general.css">
+      <link rel="stylesheet" href="/NYU-DLSP21/static/css/chrome.css">
+      <link rel="stylesheet" href="/NYU-DLSP21/static/css/print.css" media="print">
+
+      <!-- Fonts -->
+      <link rel="stylesheet" href="/NYU-DLSP21/static/FontAwesome/css/font-awesome.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+      <!-- Highlight.js Stylesheets -->
+      <link rel="stylesheet" href="/NYU-DLSP21/static/highlight.css">
+      <link rel="stylesheet" href="/NYU-DLSP21/static/tomorrow-night.css">
+      <link rel="stylesheet" href="/NYU-DLSP21/static/ayu-highlight.css">
+	  
+	  <!-- Katex -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous" onload="render_katex()"></script>
+
+      <!-- To automatically render math in text elements, include the auto-render extension: -->
+      <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+          onload="renderMathInElement(document.body, {delimiters: [
+                          {left: '$$', right: '$$', display: true},
+                          {left: '$', right: '$', display: false},
+                          {left: '\\[', right: '\\]', display: true},
+                          {left: '\\(', right: '\\)', display: false}
+          ]});"></script>
+    </head>
+
+  <body class="ayu">
+    <!-- Provide site root to javascript -->
+    <script type="text/javascript">
+        var default_theme = "ayu";
+    </script>
+
+    <!-- Work around some values being stored in localStorage wrapped in quotes -->
+    <script type="text/javascript">
+        try {
+            var theme = localStorage.getItem('mdbook-theme');
+            var sidebar = localStorage.getItem('mdbook-sidebar');
+
+            if (theme.startsWith('"') && theme.endsWith('"')) {
+                localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+            }
+
+            if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+            }
+        } catch (e) { }
+    </script>
+
+    <!-- Set the theme before any content is loaded, prevents flash -->
+    <script type="text/javascript">
+        var theme;
+        try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+        if (theme === null || theme === undefined) { theme = default_theme; }
+        document.body.className = theme;
+        document.querySelector('html').className = theme + ' js';
+    </script>
+
+    <!-- Hide / unhide sidebar before it is displayed -->
+    <script type="text/javascript">
+        var html = document.querySelector('html');
+        var sidebar = 'hidden';
+        if (document.body.clientWidth >= 1080) {
+            try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+            sidebar = sidebar || 'visible';
+        }
+        html.classList.remove('sidebar-visible');
+        html.classList.add("sidebar-" + sidebar);
+    </script>
+
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents" aria-hidden="false" >
+        <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+
+            
+
+            <ol class="chapter">
+            <!-- "/" vs "/NYU-DLSP21/" -->
+            
+                <li><a href="/NYU-DLSP21/">Home</a></li>
+            
+
+            
+            
+            
+            
+            
+
+            
+              
+              
+              
+              
+              <li class="expanded "><a class="" href="/NYU-DLSP21/en/faq/">
+                Foreword, FAQ and disclaimer
+              </a></li>
+              
+            
+
+            
+              
+              
+              
+              
+              
+              <li class="expanded "><a class="" href="/NYU-DLSP21/en/week01/01/">
+                  <strong aria-hidden="true">1.</strong> Week 1
+              </a></li>
+              
+            
+              
+              
+              
+              
+              
+              <li class="expanded "><a class="" href="/NYU-DLSP21/en/week02/02/">
+                  <strong aria-hidden="true">2.</strong> Week 2
+              </a></li>
+              
+              	<li><ol class="section">
+                
+                  
+                  
+                  
+                  
+                  <li class="expanded "><a class="" href="/NYU-DLSP21/en/week02/02-3/">
+                      <strong aria-hidden="true">2.1.</strong> Problem Motivation, Linear Algebra, and Visualization
+                  </a></li>
+                  
+              	</ol></li>
+              
+            
+              
+              
+              
+              
+              
+              <li class="expanded "><a class="" href="/NYU-DLSP21/en/week03/03/">
+                  <strong aria-hidden="true">3.</strong> Week 3
+              </a></li>
+              
+              	<li><ol class="section">
+                
+                  
+                  
+                  
+                  
+                  <li class="expanded "><a class="" href="/NYU-DLSP21/en/week03/03-3/">
+                      <strong aria-hidden="true">3.1.</strong> Spiral classification
+                  </a></li>
+                  
+              	</ol></li>
+              
+            
+              
+              
+              
+              
+              
+              <li class="expanded "><a class="" href="/NYU-DLSP21/en/week04/04/">
+                  <strong aria-hidden="true">4.</strong> Week 4
+              </a></li>
+              
+            
+              
+              
+              
+              
+              
+              <li class="expanded "><a class="" href="/NYU-DLSP21/en/week05/05/">
+                  <strong aria-hidden="true">5.</strong> Week 5
+              </a></li>
+              
+            
+              
+              
+              
+              
+              
+              <li class="expanded "><a class="" href="/NYU-DLSP21/en/week06/06/">
+                  <strong aria-hidden="true">6.</strong> Week 6
+              </a></li>
+              
+            
+              
+              
+              
+              
+              
+              <li class="expanded "><a class="" href="/NYU-DLSP21/en/week07/07/">
+                  <strong aria-hidden="true">7.</strong> Week 7
+              </a></li>
+              
+              	<li><ol class="section">
+                
+                  
+                  
+                  
+                  
+                  <li class="expanded "><a class="" href="/NYU-DLSP21/en/week07/07-3/">
+                      <strong aria-hidden="true">7.1.</strong> Introduction to Autoencoders
+                  </a></li>
+                  
+              	</ol></li>
+              
+            
+              
+              
+              
+              
+              
+              <li class="expanded "><a class="" href="/NYU-DLSP21/en/week08/08/">
+                  <strong aria-hidden="true">8.</strong> Week 8
+              </a></li>
+              
+              	<li><ol class="section">
+                
+                  
+                  
+                  
+                  
+                  <li class="expanded "><a class="" href="/NYU-DLSP21/en/week08/08-3/">
+                      <strong aria-hidden="true">8.1.</strong> Generative Models - Autoencoders
+                  </a></li>
+                  
+              	</ol></li>
+              
+            
+              
+              
+              
+              
+              
+              <li class="expanded "><a class="" href="/NYU-DLSP21/en/week09/09/">
+                  <strong aria-hidden="true">9.</strong> Week 9
+              </a></li>
+              
+              	<li><ol class="section">
+                
+                  
+                  
+                  
+                  
+                  <li class="expanded "><a class="" href="/NYU-DLSP21/en/week09/09-3/">
+                      <strong aria-hidden="true">9.1.</strong> Generative Models
+                  </a></li>
+                  
+              	</ol></li>
+              
+            
+              
+              
+              
+              
+              
+              <li class="expanded "><a class="" href="/NYU-DLSP21/en/week10/10/">
+                  <strong aria-hidden="true">10.</strong> Week 10
+              </a></li>
+              
+              	<li><ol class="section">
+                
+                  
+                  
+                  
+                  
+                  <li class="expanded "><a class="" href="/NYU-DLSP21/en/week10/10-1/">
+                      <strong aria-hidden="true">10.1.</strong> Self Supervised Learning in Computer Vision
+                  </a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="expanded "><a class="" href="/NYU-DLSP21/en/week10/10-2/">
+                      <strong aria-hidden="true">10.2.</strong> SEER, AVID + CMA, Distillation, Barlow Twins
+                  </a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="expanded "><a class="" href="/NYU-DLSP21/en/week10/10-3/">
+                      <strong aria-hidden="true">10.3.</strong> Transformer  Encoder-predictor-decoder architecture
+                  </a></li>
+                  
+              	</ol></li>
+              
+            
+              
+              
+              
+              
+              
+              <li class="expanded "><a class="" href="/NYU-DLSP21/en/week11/11/">
+                  <strong aria-hidden="true">11.</strong> Week 11
+              </a></li>
+              
+              	<li><ol class="section">
+                
+                  
+                  
+                  
+                  
+                  <li class="expanded "><a class="" href="/NYU-DLSP21/en/week11/11-1/">
+                      <strong aria-hidden="true">11.1.</strong> Speech Recognition and Graph Transformer Network I
+                  </a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="expanded "><a class="" href="/NYU-DLSP21/en/week11/11-2/">
+                      <strong aria-hidden="true">11.2.</strong> Speech Recognition and Graph Transformer Network II
+                  </a></li>
+                  
+              	</ol></li>
+              
+            
+              
+              
+              
+              
+              
+              <li class="expanded "><a class="" href="/NYU-DLSP21/en/week12/12/">
+                  <strong aria-hidden="true">12.</strong> Week 12
+              </a></li>
+              
+              	<li><ol class="section">
+                
+                  
+                  
+                  
+                  
+                  <li class="expanded "><a class="" href="/NYU-DLSP21/en/week12/12-1/">
+                      <strong aria-hidden="true">12.1.</strong> Low Resource Machine Translation I
+                  </a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="expanded "><a class="" href="/NYU-DLSP21/en/week12/12-2/">
+                      <strong aria-hidden="true">12.2.</strong> Low Resource Machine Translation II
+                  </a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="expanded "><a class="" href="/NYU-DLSP21/en/week12/12-3/">
+                      <strong aria-hidden="true">12.3.</strong> MPC (EBM version)
+                  </a></li>
+                  
+              	</ol></li>
+              
+            
+              
+              
+              
+              
+              
+              <li class="expanded "><a class="" href="/NYU-DLSP21/en/week13/13/">
+                  <strong aria-hidden="true">13.</strong> Week 13
+              </a></li>
+              
+            
+              
+              
+              
+              
+              
+              <li class="expanded "><a class="" href="/NYU-DLSP21/en/week14/14/">
+                  <strong aria-hidden="true">14.</strong> Week 14
+              </a></li>
+              
+            
+              
+              
+              
+              
+              
+              <li class="expanded "><a class="" href="/NYU-DLSP21/en/week15/15/">
+                  <strong aria-hidden="true">15.</strong> Week 15
+              </a></li>
+              
+              	<li><ol class="section">
+                
+                  
+                  
+                  
+                  
+                  <li class="expanded "><a class="" href="/NYU-DLSP21/en/week15/15-1/">
+                      <strong aria-hidden="true">15.1.</strong> Joint Embedding Methods - Contrastive
+                  </a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="expanded "><a class="" href="/NYU-DLSP21/en/week15/15-2/">
+                      <strong aria-hidden="true">15.2.</strong> Joint Embedding Methods - Regularised
+                  </a></li>
+                  
+              	</ol></li>
+              
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+            
+            
+            
+
+
+            <li><a href="https://github.com/atcold/NYU-DLSP21"><img src="/NYU-DLSP21/static/GitHub.png" /></a></li>
+            <!-- Here's some debug info: -->
+            <!--current_index: 2-->
+            <!--next_page: en/faq.md -->
+            <!--previous_page: /NYU-DLSP21/ -->
+            <!--the page list: ["/NYU-DLSP21/","/NYU-DLSP21/","en/faq.md","en/week01/01.md","en/week02/02.md","en/week02/02-3.md","en/week03/03.md","en/week03/03-3.md","en/week04/04.md","en/week05/05.md","en/week06/06.md","en/week07/07.md","en/week07/07-3.md","en/week08/08.md","en/week08/08-3.md","en/week09/09.md","en/week09/09-3.md","en/week10/10.md","en/week10/10-1.md","en/week10/10-2.md","en/week10/10-3.md","en/week11/11.md","en/week11/11-1.md","en/week11/11-2.md","en/week12/12.md","en/week12/12-1.md","en/week12/12-2.md","en/week12/12-3.md","en/week13/13.md","en/week14/14.md","en/week15/15.md","en/week15/15-1.md","en/week15/15-2.md","en/week15/15-2.md"] -->
+
+            </ol>
+        </div>
+        <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+    </nav>
+
+    <div id="page-wrapper" class="page-wrapper">
+        <div class="page">
+            <div id="menu-bar" class="menu-bar">
+                <div id="menu-bar-sticky-container">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <button id="lang-toggle" class="icon-button" type="button" title="Change language" aria-label="Change language" aria-haspopup="true" aria-expanded="false" aria-controls="lang-list">
+                            <i class="fa flag-placeholder lang-is-en"></i>
+                        </button>
+                    </div>
+                    <ul id="theme-list" class="button-popup theme-popup" aria-label="Themes" role="menu">
+                        <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu (default)</button></li>
+                    </ul>
+
+                    <ul id="lang-list" class="button-popup lang-popup" aria-label="Languages" role="menu">
+                        
+                        
+                          
+                            
+                            <li role="none"><button onclick="window.location='/NYU-DLSP21/';" role="menuitem" class="lang-selector lang-is-en theme"> en </button></li>
+                          
+                            
+                            <li role="none"><button onclick="window.location='/NYU-DLSP21/fr/';" role="menuitem" class="lang-selector lang-is-fr theme"> fr </button></li>
+                          
+                        
+                    </ul>
+
+                    <h1 class="menu-title">Deep Learning</h1>
+
+                    <div class="right-buttons">
+                        <a href="" title="Git repository" aria-label="Git repository">
+                            <!-- <i id="git-repository-button" class="fa "></i> -->
+                            <i id="git-repository-button"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+            <script type="text/javascript">
+                document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                });
+            </script>
+
+            <div id="content" class="content">
+                <main>
+                    <div class="page" >
+                      <h1 class="page-title">DEEP LEARNING</h1>
+                      <p><strong>DS-GA 1008 · SPRING 2021 · <a href="http://cds.nyu.edu/">NYU CENTER FOR DATA SCIENCE</a></strong></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>INSTRUCTORS</td>
+      <td>Yann LeCun &amp; Alfredo Canziani</td>
+    </tr>
+    <tr>
+      <td>LECTURES</td>
+      <td>Wednesday 9:30 – 11:30, Zoom</td>
+    </tr>
+    <tr>
+      <td>PRACTICA</td>
+      <td>Tuesdays 9:30 – 10:30, Zoom</td>
+    </tr>
+    <tr>
+      <td>FORUM</td>
+      <td><a href="https://www.reddit.com/r/NYU_DeepLearning/">r/NYU_DeepLearning</a></td>
+    </tr>
+    <tr>
+      <td>DISCORD</td>
+      <td><a href="https://discord.gg/CthuqsX8Pb">NYU DL</a></td>
+    </tr>
+    <tr>
+      <td>MATERIAL</td>
+      <td><a href="https://github.com/Atcold/NYU-DLSP21">2021 repo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="2021-edition-disclaimer">2021 edition disclaimer</h2>
+
+<p>Check the repo’s <a href="https://github.com/Atcold/NYU-DLSP21/blob/master/README.md"><code>README.md</code></a> and learn about:</p>
+
+<ul>
+  <li>Content new organisation</li>
+  <li>The semester’s second half intellectual dilemma</li>
+  <li>This semester repository</li>
+  <li>Previous releases</li>
+</ul>
+
+<h2 id="lectures">Lectures</h2>
+
+<p>Most of the lectures, labs, and notebooks are similar to the previous edition, nevertheless, some are brand new.
+I will try to make clear which is which.</p>
+
+<p><strong>Legend</strong>: 🖥 slides, 📝 notes, 📓 Jupyter notebook, 🎥 YouTube video.</p>
+
+<h3 id="theme-1-introduction">Theme 1: Introduction</h3>
+
+<ul>
+  <li>History and resources <a href="https://youtu.be/mTtDfKgLm54">🎥</a> <a href="https://drive.google.com/file/d/1vVNUye-1JNJnqP4A0704sjtF7gs_MpCI/">🖥</a></li>
+  <li>Gradient descent and the backpropagation algorithm <a href="https://youtu.be/nTlCqaL7fCY">🎥</a> <a href="https://drive.google.com/file/d/1tYPYGYFDQw5IBs9wx4egCcBTTX2h9d9g/">🖥</a></li>
+  <li><a href="https://atcold.github.io/NYU-DLSP21/en/week02/02-3/">Neural nets inference</a> <a href="https://youtu.be/0TdAmZUMj2k">🎥</a> <a href="https://github.com/Atcold/NYU-DLSP20/blob/master/02-space_stretching.ipynb">📓</a></li>
+  <li>Modules and architectures <a href="https://youtu.be/IYQN3i7dJIQ">🎥</a> <a href="https://drive.google.com/file/d/1IaDI6BJ6g4SJbJLtNjVE_miWRzBH1-MX/">🖥</a></li>
+  <li><a href="https://atcold.github.io/NYU-DLSP21/en/week03/03-3/">Neural nets training</a> <a href="https://youtu.be/EyKiYVwrdjE">🎥</a> <a href="https://github.com/Atcold/NYU-DLSP20/blob/master/slides/01%20-%20Spiral%20classification.pdf">🖥</a> <a href="https://github.com/Atcold/NYU-DLSP20/blob/master/04-spiral_classification.ipynb">📓</a> <a href="https://github.com/Atcold/NYU-DLSP20/blob/master/05-regression.ipynb">📓</a></li>
+  <li><a href="https://drive.google.com/drive/folders/1g-uQNEi_NJyELGRMrJGXXxmARDabcXFd">Homework 1: backprop</a></li>
+</ul>
+
+<h3 id="theme-2-parameters-sharing">Theme 2: Parameters sharing</h3>
+
+<ul>
+  <li>Recurrent and convolutional nets <a href="https://youtu.be/7dU3TFBJl-0">🎥</a> <a href="https://drive.google.com/file/d/1GtI4ywzI84oamyr_W5k_wzgfRN139aFD/">🖥</a> <a href="https://drive.google.com/file/d/12jP4ssUIoGURAU8jGj6QwKXyZVdXW0o6/">📝</a></li>
+  <li>ConvNets in practice <a href="https://youtu.be/-wz_vADGbtE">🎥</a> <a href="https://drive.google.com/file/d/1WX3HoZhekL4MVvi_7VuLRYJtBGnF9JJY/">🖥</a> <a href="https://drive.google.com/file/d/1ToWP7e71diAeMtQ0D9pU-f0BXF4bAg46/">📝</a></li>
+  <li>Natural signals properties and the convolution <a href="https://youtu.be/KvvNkE2vQVk">🎥</a> <a href="https://github.com/Atcold/NYU-DLSP20/blob/master/slides/02%20-%20CNN.pdf">🖥</a> <a href="https://github.com/Atcold/NYU-DLSP20/blob/master/06-convnet.ipynb">📓</a></li>
+  <li>Recurrent neural networks, vanilla and gated (LSTM) <a href="https://youtu.be/5KSGNomPJTE">🎥</a> <a href="https://github.com/Atcold/NYU-DLSP20/blob/master/slides/04%20-%20RNN.pdf">🖥</a> <a href="https://github.com/Atcold/NYU-DLSP20/blob/master/08-seq_classification.ipynb">📓</a> <a href="https://github.com/Atcold/NYU-DLSP20/blob/master/09-echo_data.ipynb">📓</a></li>
+  <li><a href="https://drive.google.com/drive/folders/1or1YiW0fFiZGEYy6b4EOEDgRPr0GQX0i">Homework 2: RNN &amp; CNN</a></li>
+</ul>
+
+<h3 id="theme-3-energy-based-models-foundations">Theme 3: Energy based models, foundations</h3>
+
+<ul>
+  <li>Energy based models (I) <a href="https://youtu.be/xIn-Czj1g2Q">🎥</a> <a href="https://drive.google.com/file/d/1kLUgZdRYFO5ksYHzbsRS8m8IocNiGu2J/">🖥</a></li>
+  <li>Inference for LV-EBMs <a href="https://youtu.be/xA_OPjRby5g">🎥</a> <a href="https://github.com/Atcold/NYU-DLSP20/blob/master/slides/12%20-%20EBM.pdf">🖥</a></li>
+  <li>What are EBMs good for? <a href="https://youtu.be/eJeJWWEo7cE">🎥</a></li>
+  <li>Energy based models (II) <a href="https://youtu.be/8u2s64ZtmiA">🎥</a> <a href="https://drive.google.com/file/d/1czfiEE6IPqE7q1fTm-SWOiC3VNEtpNrj/">🖥</a> <a href="https://drive.google.com/file/d/1IB5dkcAQ6GsHEz8Eg2hjaeQeVtT2i4Z5/">📝</a></li>
+  <li>Training LV-EBMs <a href="https://youtu.be/XIMaWj5YjOQ">🎥</a> <a href="https://github.com/Atcold/NYU-DLSP20/blob/master/slides/12%20-%20EBM.pdf">🖥</a></li>
+  <li><a href="https://drive.google.com/drive/folders/1zGy_SnMBqaoS7_dHRmKiOFtqNV1jJJb6">Homework 3: structured prediction</a></li>
+</ul>
+
+<h3 id="theme-4-energy-based-models-advanced">Theme 4: Energy based models, advanced</h3>
+
+<ul>
+  <li>Energy based models (III) <a href="https://youtu.be/AOFUZZZ6KyU">🎥</a> <a href="https://drive.google.com/file/d/19crFMCpJ5YCGbWv6myv7O4pGaJT6-u5p/">🖥</a></li>
+  <li><a href="https://atcold.github.io/NYU-DLSP21/en/week07/07-3/">Unsup learning and autoencoders</a> <a href="https://youtu.be/IuXsG3sN3zY">🎥</a> <a href="https://drive.google.com/file/d/1aa1Hzq5KRekq32mlW4_pgIXMec18WgOg/">🖥</a></li>
+  <li>Energy based models (VI) <a href="https://youtu.be/bdebHVF__mo">🎥</a> <a href="https://drive.google.com/file/d/1w6QO0a2_0Prz1U1mxa1n-YP9U8GW1_kq/">🖥</a></li>
+  <li><a href="https://atcold.github.io/NYU-DLSP21/en/week08/08-3/">From LV-EBM to target prop to (any) autoencoder</a> <a href="https://youtu.be/PpcN-F7ovK0">🎥</a> <a href="https://drive.google.com/file/d/1aa1Hzq5KRekq32mlW4_pgIXMec18WgOg/">🖥</a></li>
+  <li>Energy based models (V) <a href="https://youtu.be/AQtPoDnauq4">🎥</a> <a href="https://drive.google.com/file/d/1tKzrnJgptnyMcE_4zWJNP5INeVcVBWkr/">🖥</a></li>
+  <li><a href="https://atcold.github.io/NYU-DLSP21/en/week09/09-3/">AEs with PyTorch and GANs</a> <a href="https://youtu.be/bZF4N8HR1cc">🎥</a> <a href="https://drive.google.com/file/d/1aa1Hzq5KRekq32mlW4_pgIXMec18WgOg/">🖥</a> <a href="https://github.com/Atcold/NYU-DLSP21/blob/master/10-autoencoder.ipynb">📓</a> <a href="https://github.com/Atcold/NYU-DLSP21/blob/master/11-VAE.ipynb">📓</a></li>
+  <li><a href="en/week15/15-1/">Joint Embedding Methods (I)</a> <a href="https://youtu.be/5VjEBHWuYs8">🎥</a> <a href="https://drive.google.com/file/d/17NYsSagXF5wrprv7ISCEYLeEyRwCZg9r/">🖥</a> <a href="https://drive.google.com/file/d/1fo5teinBim6GQX5QkzV5f5yzDjbSVraf/">🖥</a></li>
+  <li><a href="en/week15/15-2/">Joint Embedding Methods (II)</a> <a href="https://youtu.be/EBrbaD2zyuo">🎥</a> <a href="https://drive.google.com/file/d/1I6kggxFK_x--UEhsKbuNHLwmqGSRFIpR/">🖥</a></li>
+</ul>
+
+<h3 id="theme-5-associative-memories">Theme 5: Associative memories</h3>
+
+<ul>
+  <li>Energy based models (V) <a href="https://youtu.be/AQtPoDnauq4">🎥</a> <a href="https://drive.google.com/file/d/1tKzrnJgptnyMcE_4zWJNP5INeVcVBWkr/">🖥</a></li>
+  <li><a href="https://atcold.github.io/NYU-DLSP21/en/week10/10-3/">Attention &amp; transformer</a> <a href="https://youtu.be/fEVyfT-gLqQ">🎥</a> <a href="https://drive.google.com/file/d/1MGfNPjg9YpxMcdfP2GcjluMQXlXud10C/">🖥</a> <a href="https://github.com/Atcold/NYU-DLSP20/blob/master/15-transformer.ipynb">📓</a></li>
+</ul>
+
+<h3 id="theme-6-graphs">Theme 6: Graphs</h3>
+
+<ul>
+  <li><a href="https://atcold.github.io/NYU-DLSP21/en/week11/11/">Graph transformer nets</a> [<a href="https://atcold.github.io/NYU-DLSP21/en/week11/11-1/">A</a>][<a href="https://atcold.github.io/NYU-DLSP21/en/week11/11-2/">B</a>] <a href="https://youtu.be/Of9s8epjflU">🎥</a> <a href="https://drive.google.com/file/d/1-u2fSSICaWoFu91oiMsd2mAhg6ZGomMg/">🖥</a></li>
+  <li>Graph convolutional nets (I) [from last year] <a href="https://youtu.be/Iiv9R6BjxHM">🎥</a> <a href="https://drive.google.com/file/d/1oq-nZE2bEiQjqBlmk5_N_rFC8LQY0jQr/">🖥</a></li>
+  <li>Graph convolutional nets (II) <a href="https://youtu.be/lWUh7jzhQ1Q">🎥</a> <a href="https://github.com/Atcold/NYU-DLSP20/blob/master/slides/11%20-%20GCN.pdf">🖥</a> <a href="https://github.com/Atcold/NYU-DLSP20/blob/master/16-gated_GCN.ipynb">📓</a></li>
+</ul>
+
+<h3 id="theme-7-control">Theme 7: Control</h3>
+
+<ol>
+  <li><a href="https://atcold.github.io/NYU-DLSP21/en/week12/12-3/">Planning and control</a> <a href="https://youtu.be/wTg6qJlXkok">🎥</a> <a href="https://drive.google.com/file/d/1JDssHbOxX_MZlmOopQaPZxuyCVoNExcM/">🖥</a></li>
+  <li>The Truck Backer-Upper <a href="https://youtu.be/C4iSZ3IJU-w">🎥</a> <a href="https://github.com/Atcold/NYU-DLSP20/blob/master/slides/09%20-%20Controller%20learning.pdf">🖥</a> <a href="https://github.com/Atcold/NYU-DLSP20/blob/master/14-truck_backer-upper.ipynb">📓</a></li>
+  <li>Prediction and Planning Under Uncertainty <a href="https://youtu.be/DJgloa244ZQ">🎥</a> <a href="http://bit.ly/PPUU-slides">🖥</a></li>
+</ol>
+
+<h3 id="theme-8-optimisation">Theme 8: Optimisation</h3>
+<ul>
+  <li>Optimisation (I) [from last year] <a href="https://youtu.be/--NZb480zlg">🎥</a> <a href="https://drive.google.com/open?id=1pwlGN6hDFfEYQqBqcMjWbe4yfBDTxsab">🖥</a></li>
+  <li>Optimisation (II) <a href="https://youtu.be/n1w5b5rTFv0">🎥</a> <a href="https://drive.google.com/file/d/1ExKFOOdyUiLuk3zN5LAVwUyEoI1HJxag/">🖥</a> <a href="https://drive.google.com/file/d/1UJibhwdwJPZDwqlVVzeAHScPxK4TDCq5/">📝</a></li>
+</ul>
+
+<h3 id="miscellaneous">Miscellaneous</h3>
+
+<ul>
+  <li><a href="https://atcold.github.io/NYU-DLSP21/en/week10/10/">SSL for vision</a> [<a href="https://atcold.github.io/NYU-DLSP21/en/week10/10-1/">A</a>][<a href="https://atcold.github.io/NYU-DLSP21/en/week10/10-2/">B</a>] <a href="https://youtu.be/8L10w1KoOU8">🎥</a> <a href="https://drive.google.com/file/d/1BQlWMVesOcioW69RCKWCjp6280Q42W9q/">🖥</a></li>
+  <li><a href="https://atcold.github.io/NYU-DLSP21/en/week12/12/">Low resource machine translation</a> [<a href="https://atcold.github.io/NYU-DLSP21/en/week12/12-1/">A</a>][<a href="https://atcold.github.io/NYU-DLSP21/en/week12/12-2/">B</a>] <a href="https://youtu.be/fR42OOy9ROo">🎥</a> <a href="https://drive.google.com/file/d/1pm1fM1DFqCHrjGorCQCwg5SgMjwZBwGR/">🖥</a></li>
+  <li>Lagrangian backprop, final project, and Q&amp;A <a href="https://youtu.be/MJfnamMFylo">🎥</a> <a href="https://drive.google.com/file/d/1Z9tkkTpsHzcyoPN9yqq8Nv_Bnw5bghEK/">🖥</a> <a href="https://drive.google.com/file/d/1BMoaE7I-IwZF32YfASiTw1OnMblWAVGb/">📝</a></li>
+</ul>
+
+                    </div>
+                </main>
+
+                <nav class="nav-wrapper" aria-label="Page navigation">
+                    <!-- Mobile navigation buttons -->
+                    <a rel="prev" href="/NYU-DLSP21" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="/NYU-DLSP21/en/faq/" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+
+                    <div style="clear: both"></div>
+                </nav>
+            </div>
+        </div>
+
+        <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                <a href="/NYU-DLSP21" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+
+                <a href="/NYU-DLSP21/en/faq/" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+        </nav>
+
+    </div>
+
+    <script src="/NYU-DLSP21/static/clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/NYU-DLSP21/static/highlight.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/NYU-DLSP21/static/book.js" type="text/javascript" charset="utf-8"></script>
+
+    <script>
+      function render_katex() {
+      $("script[type='math/tex']").replaceWith(function() {
+          var tex = $(this).text();
+          return katex.renderToString(tex, {displayMode: false});
+      });
+
+      $("script[type='math/tex; mode=display']").replaceWith(function() {
+          var tex = $(this).html();
+          return katex.renderToString(tex.replace(/%.*/g, ''), {displayMode: true});
+      });
+      };
+    </script>
+
+    </body>
+</html>
